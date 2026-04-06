@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="Manuh Digital Institute offers online courses in programming, web development, graphic design and more.">
+<meta name="keywords" content="Manuh, coding school, online courses, programming Kenya">
+<title>MANUH DIGITAL INSTITUTE</title>
+
+<style>
+/* MENU BUTTON */
+.menu-btn {
+    font-size: 25px;
+    cursor: pointer;
+    padding: 10px;
+    position: fixed;
+    top: 10px;
+    left: 15px;
+    color: white;
+    z-index: 1000;
+}
+
+/* SIDE MENU */
+.side-menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #0a3d62;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+}
+
+.side-menu a {
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.side-menu a:hover {
+    background: #38ada9;
+}
+body {
+    margin: 0;
+    font-family: Arial;
+    background: url("background.jpg") no-repeat center/cover;
+    color: white;
+}
+
+header {
+    background: rgba(0,0,0,0.7);
+    text-align: center;
+    padding: 20px;
+}
+
+nav {
+    background: #1e3799;
+    text-align: center;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    margin: 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.section {
+    background: rgba(0,0,0,0.7);
+    margin: 20px;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.btn {
+    padding: 12px 20px;
+    background: #38ada9;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+footer {
+    background: rgba(0,0,0,0.8);
+    text-align: center;
+    padding: 10px;
+}
+</style>
+</head>
+
+<body>
+<!-- MENU BUTTON -->
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+<!-- SIDE MENU -->
+<div id="sideMenu" class="side-menu">
+    <a href="#" onclick="toggleMenu()">❌Close</a>
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="updates.html">Updates</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="contact.html">Contact</a>
+</div>
+<header>
+    <img src="logo.png" width="220">
+    <h1>MANUH DIGITAL INSTITUTE</h1>
+    <p>Empowering Skills for the Digital Future</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="updates.html">Updates</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<!-- HERO SECTION -->
+<div class="hero">
+    <h2>Build Your Future with Digital Skills</h2>
+    <p>Learn. Grow. Succeed — From Anywhere.</p>
+    <br>
+    <a class="btn" href="https://forms.gle/YhykzPtUgLiprZreA">Register Now</a>
+</div>
+
+<!-- WHY CHOOSE US -->
+<div class="section">
+    <h2>Why Choose MANUH DIGITAL INSTITUTE?</h2>
+    <p>
+        At MANUH DIGITAL INSTITUTE, we go beyond traditional learning. 
+        We equip our students with <b>real-world digital skills</b> that are in high demand today.
+    </p>
+
+    <ul>
+        <li>✔ 100% Online & Flexible Learning</li>
+        <li>✔ Beginner to Advanced Training</li>
+        <li>✔ Practical Skills & Real Projects</li>
+        <li>✔ Affordable Fees</li>
+        <li>✔ Personalized Support & Mentorship</li>
+    </ul>
+</div>
+
+<!-- VISION -->
+<div class="section">
+    <h2>Our Mission</h2>
+    <p>
+        Our mission is to empower students, graduates, and professionals with 
+        the skills needed to thrive in the modern digital world.
+    </p>
+
+    <h2>Our Vision</h2>
+    <p>
+        To become a leading digital training institute that transforms lives 
+        through technology and education.
+    </p>
+</div>
+
+<!-- FOUNDER SECTION -->
+<div class="section">
+    <h2>About the Founder</h2>
+    <p>
+        MANUH DIGITAL INSTITUTE was founded by <b>Emmanuel Kasivu Kioto</b>, 
+        an IT enthusiast and passionate educator dedicated to helping young people 
+        gain digital skills and succeed in the modern world.
+    </p>
+
+    <p>
+        Through vision, innovation, and commitment, the founder created this platform 
+        to make learning accessible, practical, and impactful for everyone.
+    </p>
+</div>
+
+<!-- CALL TO ACTION -->
+<div class="section" style="text-align:center;">
+    <h2>Start Your Journey Today 🚀</h2>
+    <p>Join hundreds of learners building their future with us.</p>
+    <br>
+    <a class="btn" href="https://forms.gle/YhykzPtUgLiprZreA">Enroll Now</a>
+</div>
+
+<footer>
+    © 2026 MANUH DIGITAL INSTITUTE
+</footer>
+
+<script>
+function toggleMenu(){
+    let menu = document.getElementById("sideMenu");
+
+    if(menu.style.width === "250px"){
+        menu.style.width = "0";
+    } else {
+        menu.style.width = "250px";
+    }
+}
+</script>
+</body>
+</html>

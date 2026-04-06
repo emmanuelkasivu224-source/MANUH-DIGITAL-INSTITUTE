@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="Manuh Digital Institute offers online courses in programming, web development, graphic design and more.">
+<meta name="keywords" content="Manuh, coding school, online courses, programming Kenya">
+<title>Testimonials - MANUH</title>
+
+<style>
+/* MENU BUTTON */
+.menu-btn {
+    font-size: 25px;
+    cursor: pointer;
+    padding: 10px;
+    position: fixed;
+    top: 10px;
+    left: 15px;
+    color: white;
+    z-index: 1000;
+}
+
+/* SIDE MENU */
+.side-menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #0a3d62;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+}
+
+.side-menu a {
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.side-menu a:hover {
+    background: #38ada9;
+}
+body {
+    font-family: Arial;
+    margin: 0;
+    background: #eef5f9;
+}
+
+header, footer {
+    background: #0a3d62;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+nav {
+    background: #1e3799;
+    text-align: center;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    margin: 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.section {
+    padding: 30px;
+    text-align: center;
+}
+
+/* TESTIMONIAL CARDS */
+.testimonials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.card h4 {
+    margin: 0;
+    color: #0a3d62;
+}
+
+.card p {
+    font-size: 14px;
+}
+
+/* SLIDESHOW */
+.slideshow {
+    max-width: 600px;
+    margin: auto;
+    position: relative;
+}
+
+.slide {
+    display: none;
+}
+
+.slide img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* BUTTON */
+.btn {
+    padding: 12px;
+    background: #38ada9;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+</style>
+</head>
+
+<body>
+<!-- MENU BUTTON -->
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+<!-- SIDE MENU -->
+<div id="sideMenu" class="side-menu">
+    <a href="#" onclick="toggleMenu()">❌Close</a>
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="updates.html">Updates</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="contact.html">Contact</a>
+</div>
+<header>
+<h2>Student Testimonials</h2>
+<p>Real Experiences. Real Success.</p>
+</header>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="courses.html">Courses</a>
+<a href="updates.html">Updates</a>
+<a href="testimonials.html">Testimonials</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+<!-- THANK YOU MESSAGE -->
+<div class="section">
+<h3>We Appreciate Our Students 💙</h3>
+
+<p>
+At <b>MANUH DIGITAL INSTITUTE</b>, we sincerely thank all our students 
+for trusting us with their journey. Your success is our motivation, 
+and we remain committed to empowering you with skills that shape your future.
+</p>
+</div>
+
+<!-- TESTIMONIAL CARDS -->
+<div class="section">
+<h3>What Our Students Say 💬</h3>
+
+<div id="testimonials" class="testimonials"></div>
+
+<br><br>
+<a class="btn" href="https://forms.gle/PtaR4DjVMoAG7tKN6">Leave a Testimonial</a>
+
+</div>
+
+<script>
+const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQhWSecaoPo58RDYDO5vGVjQj4ZnOai4Zv1HASyNy6rtLW99l5zXTQamYXKHBvB--AUJJ_jW89Kjvk1/pub?gid=975056607&single=true&output=csv";
+
+fetch(sheetURL)
+.then(response => response.text())
+.then(data => {
+    const rows = data.split("\n").slice(1); // skip header
+
+    let html = "";
+
+    rows.forEach(row => {
+        const cols = row.split(",");
+
+        if(cols.length >= 3){
+            const name = cols[0];
+            const course = cols[1];
+            const message = cols[2];
+
+            html += `
+            <div class="card">
+                <h4>${name}</h4>
+                <p><b>Course:</b> ${course}</p>
+                <p>${message}</p>
+            </div>
+            `;
+        }
+    });
+
+    document.getElementById("testimonials").innerHTML = html;
+});
+</script>
+
+<!-- SLIDESHOW -->
+<div class="section">
+
+<h3>Our Students in Action 🎓</h3>
+
+<div class="slideshow">
+
+<div class="slide">
+<img src="grad1.png">
+</div>
+
+<div class="slide">
+<img src="grad2.jpeg">
+</div>
+
+<div class="slide">
+<img src="grad3.jpg">
+</div>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 MANUH DIGITAL INSTITUTE
+</footer>
+
+<script>
+let index = 0;
+showSlides();
+
+function showSlides() {
+    let slides = document.getElementsByClassName("slide");
+    
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    
+    index++;
+    if (index > slides.length) {index = 1}
+    
+    slides[index-1].style.display = "block";
+    
+    setTimeout(showSlides, 3000);
+}
+</script>
+<script>
+function toggleMenu(){
+    let menu = document.getElementById("sideMenu");
+
+    if(menu.style.width === "250px"){
+        menu.style.width = "0";
+    } else {
+        menu.style.width = "250px";
+    }
+}
+</script>
+
+</body>
+</html>

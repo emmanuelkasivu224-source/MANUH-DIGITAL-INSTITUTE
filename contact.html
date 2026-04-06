@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="Manuh Digital Institute offers online courses in programming, web development, graphic design and more.">
+<meta name="keywords" content="Manuh, coding school, online courses, programming Kenya">
+<title>Contact - MANUH</title>
+
+<style>
+/* MENU BUTTON */
+.menu-btn {
+    font-size: 25px;
+    cursor: pointer;
+    padding: 10px;
+    position: fixed;
+    top: 10px;
+    left: 15px;
+    color: white;
+    z-index: 1000;
+}
+
+/* SIDE MENU */
+.side-menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #0a3d62;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+}
+
+.side-menu a {
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.side-menu a:hover {
+    background: #38ada9;
+}
+body {font-family: Arial; margin:0;}
+
+header, footer {
+    background:#0a3d62;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+
+nav {
+    background:#1e3799;
+    text-align:center;
+    padding:10px;
+}
+
+nav a {
+    color:white;
+    margin:10px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.section {
+    padding:30px;
+    text-align:center;
+}
+
+.btn {
+    padding:12px;
+    background:#38ada9;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+}
+</style>
+</head>
+
+<body>
+<!-- MENU BUTTON -->
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+<!-- SIDE MENU -->
+<div id="sideMenu" class="side-menu">
+     <a href="#" onclick="toggleMenu()">❌Close</a>
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="updates.html">Updates</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="contact.html">Contact</a>
+</div>
+<header>
+<h2>Contact Us</h2>
+</header>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="courses.html">Courses</a>
+<a href="updates.html">Updates</a>
+<a href="testimonials.html">Testimonials</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+<div class="section">
+<p>
+We are always here to support you on your learning journey. 
+Whether you have questions about our courses, registration, schedules, or payments, 
+feel free to reach out to us at any time.
+</p>
+
+<p>
+Our team at <b>MANUH DIGITAL INSTITUTE</b> is committed to providing quick and helpful responses 
+to ensure you have a smooth and enjoyable learning experience.
+</p>
+
+<p>
+Contact us today and take the first step toward building your digital future.
+</p>
+<p><b>We respond quickly — don’t hesitate to reach out!</b></p>
+<p><b><u>Contact:</u></b></p>
+<p>📞 0116089094</p>
+<p>📧 emmanuelkasivu224@gmail.com</p>
+
+<br>
+<a class="btn" href="https://wa.me/254116089094">Chat on WhatsApp</a>
+<br><br><br><br>
+<p><a class="btn" href="https://forms.gle/YhykzPtUgLiprZreA">Register Now</a></p>
+</div>
+<br>
+<footer>
+© 2026 MANUH DIGITAL INSTITUTE
+</footer>
+
+<script>
+function toggleMenu(){
+    let menu = document.getElementById("sideMenu");
+
+    if(menu.style.width === "250px"){
+        menu.style.width = "0";
+    } else {
+        menu.style.width = "250px";
+    }
+}
+</script>
+</body>
+</html>
