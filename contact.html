@@ -1,149 +1,192 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="description" content="Manuh Digital Institute offers online courses in programming, web development, graphic design and more.">
-<meta name="keywords" content="Manuh, coding school, online courses, programming Kenya">
-<title>Contact - MANUH</title>
-
-<style>
-/* MENU BUTTON */
-.menu-btn {
-    font-size: 25px;
-    cursor: pointer;
-    padding: 10px;
-    position: fixed;
-    top: 10px;
-    left: 15px;
-    color: white;
-    z-index: 1000;
-}
-
-/* SIDE MENU */
-.side-menu {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: #0a3d62;
-    overflow-x: hidden;
-    transition: 0.3s;
-    padding-top: 60px;
-}
-
-.side-menu a {
-    display: block;
-    padding: 15px;
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-.side-menu a:hover {
-    background: #38ada9;
-}
-body {font-family: Arial; margin:0;}
-
-header, footer {
-    background:#0a3d62;
-    color:white;
-    text-align:center;
-    padding:15px;
-}
-
-nav {
-    background:#1e3799;
-    text-align:center;
-    padding:10px;
-}
-
-nav a {
-    color:white;
-    margin:10px;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-.section {
-    padding:30px;
-    text-align:center;
-}
-
-.btn {
-    padding:12px;
-    background:#38ada9;
-    color:white;
-    text-decoration:none;
-    border-radius:5px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact MANUH Digital Institute - Get in touch for course inquiries and support.">
+    <meta name="keywords" content="Manuh, contact, support, Kenya">
+    <title>Contact Us | MANUH Digital Institute</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="logo.png">
 </head>
-
 <body>
-<!-- MENU BUTTON -->
-<div class="menu-btn" onclick="toggleMenu()">☰</div>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="loader"></div>
+            <div class="preloader-text">Loading<span>.</span><span>.</span><span>.</span></div>
+        </div>
+    </div>
 
-<!-- SIDE MENU -->
-<div id="sideMenu" class="side-menu">
-     <a href="#" onclick="toggleMenu()">❌Close</a>
-    <a href="index.html">Home</a>
-    <a href="courses.html">Courses</a>
-    <a href="updates.html">Updates</a>
-    <a href="testimonials.html">Testimonials</a>
-    <a href="contact.html">Contact</a>
-</div>
-<header>
-<h2>Contact Us</h2>
-</header>
+    <div class="progress-bar" id="progressBar"></div>
 
-<nav>
-<a href="index.html">Home</a>
-<a href="courses.html">Courses</a>
-<a href="updates.html">Updates</a>
-<a href="testimonials.html">Testimonials</a>
-<a href="contact.html">Contact</a>
-</nav>
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
 
-<div class="section">
-<p>
-We are always here to support you on your learning journey. 
-Whether you have questions about our courses, registration, schedules, or payments, 
-feel free to reach out to us at any time.
-</p>
+    <header class="header" id="header">
+        <div class="header-inner">
+            <div class="logo">
+                <img src="logo.png" alt="MANUH Digital Institute">
+                <div>
+                    <div class="logo-text">MANUH Digital Institute</div>
+                    <div class="logo-sub">Online Learning Platform</div>
+                </div>
+            </div>
+            <button class="nav-toggle" onclick="toggleNav()">☰</button>
+            <nav class="nav" id="mainNav">
+                <a href="index.html">Home</a>
+                <a href="courses.html">Courses</a>
+                <a href="updates.html">Updates</a>
+                <a href="testimonials.html">Testimonials</a>
+                <a href="contact.html" class="active">Contact</a>
+            </nav>
+        </div>
+    </header>
 
-<p>
-Our team at <b>MANUH DIGITAL INSTITUTE</b> is committed to providing quick and helpful responses 
-to ensure you have a smooth and enjoyable learning experience.
-</p>
+    <section class="about-hero">
+        <span class="badge">📞 We're Here to Help</span>
+        <h1>Contact Us</h1>
+        <p>We're here to help you on your learning journey. Reach out anytime!</p>
+    </section>
 
-<p>
-Contact us today and take the first step toward building your digital future.
-</p>
-<p><b>We respond quickly — don’t hesitate to reach out!</b></p>
-<p><b><u>Contact:</u></b></p>
-<p>📞 0116089094</p>
-<p>📧 emmanuelkasivu224@gmail.com</p>
+    <section class="section scroll-animate">
+        <div class="contact-grid">
+            <div class="contact-card animated-card">
+                <div class="contact-icon">📞</div>
+                <h3>Phone</h3>
+                <p>Call us for immediate assistance</p>
+                <a href="tel:0116089094">0116089094</a>
+            </div>
+            <div class="contact-card animated-card">
+                <div class="contact-icon">📧</div>
+                <h3>Email</h3>
+                <p>Send us an email anytime</p>
+                <a href="mailto:emmanuelkasivu224@gmail.com">emmanuelkasivu224@gmail.com</a>
+            </div>
+            <div class="contact-card animated-card">
+                <div class="contact-icon">💬</div>
+                <h3>WhatsApp</h3>
+                <p>Chat with us on WhatsApp</p>
+                <a href="https://wa.me/254116089094">Send Message</a>
+            </div>
+            <div class="contact-card animated-card">
+                <div class="contact-icon">⏰</div>
+                <h3>Support Hours</h3>
+                <p>We're available 24/7</p>
+                <a href="#">Always Online</a>
+            </div>
+        </div>
+    </section>
 
-<br>
-<a class="btn" href="https://wa.me/254116089094">Chat on WhatsApp</a>
-<br><br><br><br>
-<p><a class="btn" href="https://forms.gle/YhykzPtUgLiprZreA">Register Now</a></p>
-</div>
-<br>
-<footer>
-© 2026 MANUH DIGITAL INSTITUTE
-</footer>
+    <section class="info-section scroll-animate">
+        <div class="info-content">
+            <h2>Get in Touch</h2>
+            <p>We are always here to support you on your learning journey. Whether you have questions about our courses, registration, schedules, or payments, feel free to reach out to us at any time.</p>
+            <br>
+            <p>Our team at <strong>MANUH Digital Institute</strong> is committed to providing quick and helpful responses to ensure you have a smooth and enjoyable learning experience.</p>
+            <br>
+            <p><strong>Contact us today and take the first step toward building your digital future.</strong></p>
+            <br>
+            <p style="color: var(--primary); font-weight: 600; font-size: 1.2rem;">We respond quickly — don't hesitate to reach out!</p>
+        </div>
+    </section>
 
-<script>
-function toggleMenu(){
-    let menu = document.getElementById("sideMenu");
+    <section class="section scroll-animate" style="background: var(--light);">
+        <h2 class="section-title">Send Us a Message</h2>
+        <p class="section-subtitle">Have a question? Fill out the form below and we'll get back to you soon.</p>
+        
+        <form style="max-width: 600px; margin: 0 auto; background: var(--white); padding: 40px; border-radius: 16px; box-shadow: var(--shadow);">
+            <div class="form-group">
+                <label>Your Name</label>
+                <input type="text" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" placeholder="Enter your phone number">
+            </div>
+            <div class="form-group">
+                <label>Message</label>
+                <textarea rows="5" placeholder="How can we help you?" style="width: 100%; padding: 14px 18px; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 1rem; resize: vertical; font-family: inherit;"></textarea>
+            </div>
+            <button type="submit" class="btn btn-accent" style="width: 100%;">Send Message</button>
+        </form>
+    </section>
 
-    if(menu.style.width === "250px"){
-        menu.style.width = "0";
-    } else {
-        menu.style.width = "250px";
-    }
-}
-</script>
+    <section class="cta-section scroll-animate">
+        <div class="cta-content">
+            <h2>Ready to Enroll?</h2>
+            <p>Start your digital learning journey today.</p>
+            <a class="btn-glow" href="https://forms.gle/YhykzPtUgLiprZreA">Register Now</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h3>MANUH Digital Institute</h3>
+                <p>Empowering students with digital skills for the modern world.</p>
+                <div class="social-icons">
+                    <a href="https://wa.me/254116089094" class="social-icon">💬</a>
+                    <a href="mailto:emmanuelkasivu224@gmail.com" class="social-icon">📧</a>
+                </div>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="courses.html">Courses</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+            <div>
+                <h3>Contact</h3>
+                <p>📞 0116089094</p>
+                <p>📧 emmanuelkasivu224@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MANUH Digital Institute. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('preloader').style.display = 'none';
+            }, 1500);
+        });
+
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+            
+            const header = document.getElementById('header');
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        function toggleNav() {
+            document.getElementById('mainNav').classList.toggle('active');
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.scroll-animate').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>

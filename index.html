@@ -1,205 +1,521 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="description" content="Manuh Digital Institute offers online courses in programming, web development, graphic design and more.">
-<meta name="keywords" content="Manuh, coding school, online courses, programming Kenya">
-<title>MANUH DIGITAL INSTITUTE</title>
-
-<style>
-/* MENU BUTTON */
-.menu-btn {
-    font-size: 25px;
-    cursor: pointer;
-    padding: 10px;
-    position: fixed;
-    top: 10px;
-    left: 15px;
-    color: white;
-    z-index: 1000;
-}
-
-/* SIDE MENU */
-.side-menu {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: #0a3d62;
-    overflow-x: hidden;
-    transition: 0.3s;
-    padding-top: 60px;
-}
-
-.side-menu a {
-    display: block;
-    padding: 15px;
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-.side-menu a:hover {
-    background: #38ada9;
-}
-body {
-    margin: 0;
-    font-family: Arial;
-    background: url("background.jpg") no-repeat center/cover;
-    color: white;
-}
-
-header {
-    background: rgba(0,0,0,0.7);
-    text-align: center;
-    padding: 20px;
-}
-
-nav {
-    background: #1e3799;
-    text-align: center;
-    padding: 10px;
-}
-
-nav a {
-    color: white;
-    margin: 15px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.hero {
-    text-align: center;
-    padding: 100px 20px;
-}
-
-.section {
-    background: rgba(0,0,0,0.7);
-    margin: 20px;
-    padding: 30px;
-    border-radius: 10px;
-}
-
-.btn {
-    padding: 12px 20px;
-    background: #38ada9;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-footer {
-    background: rgba(0,0,0,0.8);
-    text-align: center;
-    padding: 10px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MANUH Digital Institute - Empowering Skills for the Digital Future. Learn programming, web development, graphic design and more online.">
+    <meta name="keywords" content="Manuh Digital Institute, coding school, online courses, programming Kenya, web development, graphic design">
+    <title>MANUH Digital Institute | Online Learning Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="logo.png">
 </head>
-
 <body>
-<!-- MENU BUTTON -->
-<div class="menu-btn" onclick="toggleMenu()">☰</div>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="loader"></div>
+            <div class="preloader-text">Loading<span>.</span><span>.</span><span>.</span></div>
+        </div>
+    </div>
 
-<!-- SIDE MENU -->
-<div id="sideMenu" class="side-menu">
-    <a href="#" onclick="toggleMenu()">❌Close</a>
-    <a href="index.html">Home</a>
-    <a href="courses.html">Courses</a>
-    <a href="updates.html">Updates</a>
-    <a href="testimonials.html">Testimonials</a>
-    <a href="contact.html">Contact</a>
-</div>
-<header>
-    <img src="logo.png" width="220">
-    <h1>MANUH DIGITAL INSTITUTE</h1>
-    <p>Empowering Skills for the Digital Future</p>
-</header>
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="courses.html">Courses</a>
-    <a href="updates.html">Updates</a>
-    <a href="testimonials.html">Testimonials</a>
-    <a href="contact.html">Contact</a>
-</nav>
+    <!-- Animated Particles Background -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
 
-<!-- HERO SECTION -->
-<div class="hero">
-    <h2>Build Your Future with Digital Skills</h2>
-    <p>Learn. Grow. Succeed — From Anywhere.</p>
-    <br>
-    <a class="btn" href="https://forms.gle/YhykzPtUgLiprZreA">Register Now</a>
-</div>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-inner">
+            <div class="logo">
+                <img src="logo.png" alt="MANUH Digital Institute">
+                <div>
+                    <div class="logo-text">MANUH Digital Institute</div>
+                    <div class="logo-sub">Online Learning Platform</div>
+                </div>
+            </div>
+            <button class="nav-toggle" onclick="toggleNav()">☰</button>
+            <nav class="nav" id="mainNav">
+                <a href="index.html" class="active">Home</a>
+                <a href="courses.html">Courses</a>
+                <a href="updates.html">Updates</a>
+                <a href="testimonials.html">Testimonials</a>
+                <a href="contact.html">Contact</a>
+                <a href="admin.html">Admin</a>
+            </nav>
+        </div>
+    </header>
 
-<!-- WHY CHOOSE US -->
-<div class="section">
-    <h2>Why Choose MANUH DIGITAL INSTITUTE?</h2>
-    <p>
-        At MANUH DIGITAL INSTITUTE, we go beyond traditional learning. 
-        We equip our students with <b>real-world digital skills</b> that are in high demand today.
-    </p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-shapes">
+            <div class="hero-shape"></div>
+            <div class="hero-shape"></div>
+            <div class="hero-shape"></div>
+        </div>
+        <div class="hero-content">
+            <span class="badge">🚀 #1 Online Learning Platform in Kenya</span>
+            <h1>Build Your Future with Digital Skills</h1>
+            <p>Learn. Grow. Succeed. Transform your career with our expert-led online courses.</p>
+            <div class="hero-btns">
+                <a class="btn-glow accent" href="https://forms.gle/YhykzPtUgLiprZreA">Register Now</a>
+                <a class="btn" href="courses.html">Explore Courses</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll Down</span>
+            <span class="arrow">↓</span>
+        </div>
+    </section>
 
-    <ul>
-        <li>✔ 100% Online & Flexible Learning</li>
-        <li>✔ Beginner to Advanced Training</li>
-        <li>✔ Practical Skills & Real Projects</li>
-        <li>✔ Affordable Fees</li>
-        <li>✔ Personalized Support & Mentorship</li>
-    </ul>
-</div>
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+        <div class="stat-item scroll-animate">
+            <span class="stat-number" data-count="500">0</span>
+            <span class="stat-label">Students Enrolled</span>
+        </div>
+        <div class="stat-item scroll-animate">
+            <span class="stat-number" data-count="15">0</span>
+            <span class="stat-label">Expert Tutors</span>
+        </div>
+        <div class="stat-item scroll-animate">
+            <span class="stat-number" data-count="20">0</span>
+            <span class="stat-label">Courses Available</span>
+        </div>
+        <div class="stat-item scroll-animate">
+            <span class="stat-number" data-count="98">0</span>
+            <span class="stat-label">% Satisfaction Rate</span>
+        </div>
+    </div>
 
-<!-- VISION -->
-<div class="section">
-    <h2>Our Mission</h2>
-    <p>
-        Our mission is to empower students, graduates, and professionals with 
-        the skills needed to thrive in the modern digital world.
-    </p>
+    <!-- Marquee -->
+    <div class="marquee-container">
+        <div class="marquee">
+            <div class="marquee-content">
+                <span class="marquee-item">💻 Web Development</span>
+                <span class="marquee-item">🎨 Graphic Design</span>
+                <span class="marquee-item">📱 Mobile Apps</span>
+                <span class="marquee-item">₿ Cryptocurrency</span>
+                <span class="marquee-item">🎬 Video Editing</span>
+                <span class="marquee-item">📊 Data Science</span>
+                <span class="marquee-item">🔐 Cyber Security</span>
+                <span class="marquee-item">💰 Affordable Fees</span>
+            </div>
+            <div class="marquee-content">
+                <span class="marquee-item">💻 Web Development</span>
+                <span class="marquee-item">🎨 Graphic Design</span>
+                <span class="marquee-item">📱 Mobile Apps</span>
+                <span class="marquee-item">₿ Cryptocurrency</span>
+                <span class="marquee-item">🎬 Video Editing</span>
+                <span class="marquee-item">📊 Data Science</span>
+                <span class="marquee-item">🔐 Cyber Security</span>
+                <span class="marquee-item">💰 Affordable Fees</span>
+            </div>
+        </div>
+    </div>
 
-    <h2>Our Vision</h2>
-    <p>
-        To become a leading digital training institute that transforms lives 
-        through technology and education.
-    </p>
-</div>
+    <!-- Why Choose Us -->
+    <section class="section scroll-animate">
+        <h2 class="section-title">Why Choose MANUH Digital Institute?</h2>
+        <p class="section-subtitle">We equip our students with real-world digital skills that are in high demand today.</p>
+        
+        <div class="features-grid">
+            <div class="feature-card animated-card">
+                <div class="animated-icon">💻</div>
+                <h3>100% Online & Flexible</h3>
+                <p>Learn from anywhere at your own pace with our flexible online learning schedule. No travel required!</p>
+            </div>
+            <div class="feature-card animated-card">
+                <div class="animated-icon">📚</div>
+                <h3>Beginner to Advanced</h3>
+                <p>Comprehensive training programs designed for all skill levels. Start from scratch and become an expert.</p>
+            </div>
+            <div class="feature-card animated-card">
+                <div class="animated-icon">⚡</div>
+                <h3>Practical Skills</h3>
+                <p>Real-world projects and hands-on experience to prepare you for the job market and career success.</p>
+            </div>
+            <div class="feature-card animated-card">
+                <div class="animated-icon">💰</div>
+                <h3>Affordable Fees</h3>
+                <p>Quality education at competitive prices to make learning accessible to everyone.</p>
+            </div>
+            <div class="feature-card animated-card">
+                <div class="animated-icon">🤝</div>
+                <h3>Personalized Support</h3>
+                <p>One-on-one mentorship and guidance throughout your learning journey. We're here to help!</p>
+            </div>
+            <div class="feature-card animated-card">
+                <div class="animated-icon">🌍</div>
+                <h3>Global Reach</h3>
+                <p>Students from Kenya and beyond trust us for their digital education and career transformation.</p>
+            </div>
+        </div>
+    </section>
 
-<!-- FOUNDER SECTION -->
-<div class="section">
-    <h2>About the Founder</h2>
-    <p>
-        MANUH DIGITAL INSTITUTE was founded by <b>Emmanuel Kasivu Kioto</b>, 
-        an IT enthusiast and passionate educator dedicated to helping young people 
-        gain digital skills and succeed in the modern world.
-    </p>
+    <!-- Counter Section -->
+    <section class="counter-section">
+        <h2 style="color: white; margin-bottom: 40px; font-size: 2rem;">Our Achievements</h2>
+        <div class="counter-grid">
+            <div class="counter-item">
+                <span class="counter-number" data-count="500">0</span>
+                <span class="counter-label">Students Trained</span>
+            </div>
+            <div class="counter-item">
+                <span class="counter-number" data-count="50">0</span>
+                <span class="counter-label">Courses Offered</span>
+            </div>
+            <div class="counter-item">
+                <span class="counter-number" data-count="100">0</span>
+                <span class="counter-label">% Online</span>
+            </div>
+            <div class="counter-item">
+                <span class="counter-number" data-count="24">0</span>
+                <span class="counter-label">/7 Support</span>
+            </div>
+        </div>
+    </section>
 
-    <p>
-        Through vision, innovation, and commitment, the founder created this platform 
-        to make learning accessible, practical, and impactful for everyone.
-    </p>
-</div>
+    <!-- Mission & Vision -->
+    <section class="info-section scroll-animate">
+        <div class="info-content">
+            <h2>Our Mission</h2>
+            <p>Our mission is to empower students, graduates, and professionals with the skills needed to thrive in the modern digital world. We believe that quality education should be accessible to everyone, regardless of their location or background.</p>
+        </div>
+    </section>
 
-<!-- CALL TO ACTION -->
-<div class="section" style="text-align:center;">
-    <h2>Start Your Journey Today 🚀</h2>
-    <p>Join hundreds of learners building their future with us.</p>
-    <br>
-    <a class="btn" href="https://forms.gle/YhykzPtUgLiprZreA">Enroll Now</a>
-</div>
+    <section class="info-section scroll-animate">
+        <div class="info-content">
+            <h2>Our Vision</h2>
+            <p>To become a leading digital training institute that transforms lives through technology and education. We envision a future where anyone can acquire digital skills and achieve their career goals.</p>
+        </div>
+    </section>
 
-<footer>
-    © 2026 MANUH DIGITAL INSTITUTE
-</footer>
+    <!-- Founder Section -->
+    <section class="founder-section scroll-animate">
+        <div class="founder-content">
+            <h2>About the Founder</h2>
+            <p><strong>Emmanuel Kasivu Kioto</strong> is an IT enthusiast and passionate educator dedicated to helping young people gain digital skills and succeed in the modern world.</p>
+            <br>
+            <p>Through vision, innovation, and commitment, the founder created this platform to make learning accessible, practical, and impactful for everyone. His dream is to transform Kenya into a hub of digital talent.</p>
+            <br>
+            <div style="display: flex; gap: 20px; justify-content: center; margin-top: 20px;">
+                <span class="badge">💡 Visionary</span>
+                <span class="badge">🎓 Educator</span>
+                <span class="badge">💻 Tech Expert</span>
+            </div>
+        </div>
+    </section>
 
-<script>
-function toggleMenu(){
-    let menu = document.getElementById("sideMenu");
+    <!-- Featured Courses Preview -->
+    <section class="section scroll-animate">
+        <h2 class="section-title">Featured Courses</h2>
+        <p class="section-subtitle">Start your learning journey with our most popular courses</p>
+        
+        <div class="courses-grid">
+            <div class="course-card hover-lift">
+                <div class="course-icon">💻</div>
+                <div class="course-content">
+                    <h3>Web Development</h3>
+                    <p>Build modern websites with HTML, CSS, JavaScript and more.</p>
+                </div>
+            </div>
+            <div class="course-card hover-lift">
+                <div class="course-icon">🎨</div>
+                <div class="course-content">
+                    <h3>Graphic Design</h3>
+                    <p>Create stunning visuals using professional design tools.</p>
+                </div>
+            </div>
+            <div class="course-card hover-lift">
+                <div class="course-icon">⚙️</div>
+                <div class="course-content">
+                    <h3>Programming</h3>
+                    <p>Learn coding fundamentals and multiple programming languages.</p>
+                </div>
+            </div>
+            <div class="course-card hover-lift">
+                <div class="course-icon">🎬</div>
+                <div class="course-content">
+                    <h3>Video Editing</h3>
+                    <p>Create engaging video content for social media and YouTube.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px;">
+            <a class="btn" href="courses.html">View All Courses →</a>
+        </div>
+    </section>
 
-    if(menu.style.width === "250px"){
-        menu.style.width = "0";
-    } else {
-        menu.style.width = "250px";
-    }
-}
-</script>
+    <!-- Testimonials Slider -->
+    <section class="section-alt" style="padding: 80px 20px; overflow: hidden;">
+        <h2 class="section-title">What Students Say</h2>
+        <p class="section-subtitle">Hear from our successful students</p>
+        
+        <div class="testimonial-slider">
+            <div class="testimonial-track" id="testimonialTrack">
+                <!-- Loaded dynamically from Google Sheets -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section scroll-animate">
+        <div class="cta-content">
+            <h2>Start Your Journey Today 🚀</h2>
+            <p>Join hundreds of learners who have transformed their careers with MANUH Digital Institute.</p>
+            <a class="btn-glow" href="https://forms.gle/YhykzPtUgLiprZreA">Enroll Now</a>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section scroll-animate">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Got questions? We've got answers!</p>
+        
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    <span>How do I enroll in a course?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">Simply click on "Register Now" and fill out our registration form. Our team will contact you within 24 hours.</div>
+            </div>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    <span>Are the courses 100% online?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">Yes! All our courses are delivered online, so you can learn from anywhere at any time that suits you.</div>
+            </div>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    <span>What are the payment options?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">We offer flexible payment plans. You can pay via M-Pesa, bank transfer, or through our online payment gateway.</div>
+            </div>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    <span>Do I get a certificate after completion?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">Yes! Upon successful completion of any course, you will receive a professional certificate.</div>
+            </div>
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    <span>Can I get a refund if I'm not satisfied?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">We offer a 7-day money-back guarantee for all our courses. Contact us within 7 days if you're not satisfied.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="section" style="background: linear-gradient(135deg, var(--secondary), #1e3a5f); color: white; text-align: center;">
+        <h2 style="font-size: 2rem; margin-bottom: 15px;">Stay Updated</h2>
+        <p style="margin-bottom: 30px; opacity: 0.9;">Subscribe to our newsletter for latest updates and offers</p>
+        <form style="max-width: 500px; margin: 0 auto; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
+            <input type="email" placeholder="Enter your email" style="flex: 1; min-width: 250px; padding: 14px; border-radius: 10px; border: none;">
+            <button type="submit" class="btn btn-accent">Subscribe</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h3>MANUH Digital Institute</h3>
+                <p>Empowering students with digital skills for the modern world. Your success is our priority.</p>
+                <div class="social-icons">
+                    <a href="https://wa.me/254116089094" class="social-icon">💬</a>
+                    <a href="mailto:emmanuelkasivu224@gmail.com" class="social-icon">📧</a>
+                </div>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="courses.html">Courses</a>
+                    <a href="updates.html">Updates</a>
+                    <a href="testimonials.html">Testimonials</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+            <div>
+                <h3>Contact Info</h3>
+                <p>📞 0116089094</p>
+                <p>📧 emmanuelkasivu224@gmail.com</p>
+                <p>📍 Kenya (Online)</p>
+            </div>
+            <div>
+                <h3>Popular Courses</h3>
+                <div class="footer-links">
+                    <a href="courses.html">Web Development</a>
+                    <a href="courses.html">Graphic Design</a>
+                    <a href="courses.html">Programming</a>
+                    <a href="courses.html">Video Editing</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MANUH Digital Institute. All rights reserved. Made with ❤️ in Kenya</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span id="toastMessage">Message here</span>
+    </div>
+
+    <script>
+        // Preloader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('preloader').style.display = 'none';
+            }, 1500);
+        });
+
+        // Progress Bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Navigation
+        function toggleNav() {
+            document.getElementById('mainNav').classList.toggle('active');
+        }
+
+        // Animated Counter
+        function animateCounters() {
+            const counters = document.querySelectorAll('[data-count]');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-count'));
+                const duration = 2000;
+                const increment = target / (duration / 16);
+                let current = 0;
+                
+                const updateCounter = () => {
+                    current += increment;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current) + (target > 100 ? '%' : '+');
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target + (target > 100 ? '%' : '+');
+                    }
+                };
+                updateCounter();
+            });
+        }
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    if (entry.target.classList.contains('counter-section') || 
+                        entry.target.closest('.stats-bar')) {
+                        animateCounters();
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-animate, .stats-bar, .counter-section').forEach(el => {
+            observer.observe(el);
+        });
+
+        // FAQ Toggle
+        function toggleFaq(element) {
+            element.classList.toggle('active');
+            const span = element.querySelector('.faq-question span:last-child');
+            span.textContent = element.classList.contains('active') ? '−' : '+';
+        }
+
+        // Load Testimonials
+        const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQhWSecaoPo58RDYDO5vGVjQj4ZnOai4Zv1HASyNy6rtLW99l5zXTQamYXKHBvB--AUJJ_jW89Kjvk1/pub?gid=975056607&single=true&output=csv";
+
+        fetch(sheetURL)
+            .then(response => response.text())
+            .then(data => {
+                const rows = data.split("\n").slice(1);
+                let html = '';
+                rows.forEach(row => {
+                    const cols = row.split(",");
+                    if (cols.length >= 3 && cols[0]) {
+                        html += `
+                            <div class="testimonial-card hover-lift">
+                                <div style="font-size: 2rem; margin-bottom: 10px;">💬</div>
+                                <p style="color: var(--gray); margin-bottom: 15px; font-style: italic;">"${cols[2] || 'Great learning experience!'}"</p>
+                                <h4 style="color: var(--secondary);">${cols[0]}</h4>
+                                <p style="color: var(--primary); font-size: 0.9rem;">${cols[1] || 'Student'}</p>
+                            </div>
+                        `;
+                    }
+                });
+                document.getElementById('testimonialTrack').innerHTML = html || '<p style="text-align: center; color: var(--gray);">Loading testimonials...</p>';
+            })
+            .catch(() => {
+                document.getElementById('testimonialTrack').innerHTML = '<p style="text-align: center; color: var(--gray);">No testimonials yet. Be the first to share your experience!</p>';
+            });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Active nav link
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('.nav a').forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+        });
+
+        // Show toast notification
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            toast.className = 'toast ' + type;
+            toastMessage.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 4000);
+        }
+    </script>
 </body>
 </html>

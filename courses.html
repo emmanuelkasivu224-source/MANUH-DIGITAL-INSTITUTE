@@ -1,161 +1,291 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="description" content="Manuh Digital Institute offers online courses in programming, web development, graphic design and more.">
-<meta name="keywords" content="Manuh, coding school, online courses, programming Kenya">
-<title>Courses - MANUH</title>
-
-<style>
-/* MENU BUTTON */
-.menu-btn {
-    font-size: 25px;
-    cursor: pointer;
-    padding: 10px;
-    position: fixed;
-    top: 10px;
-    left: 15px;
-    color: white;
-    z-index: 1000;
-}
-
-/* SIDE MENU */
-.side-menu {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: #0a3d62;
-    overflow-x: hidden;
-    transition: 0.3s;
-    padding-top: 60px;
-}
-
-.side-menu a {
-    display: block;
-    padding: 15px;
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-.side-menu a:hover {
-    background: #38ada9;
-}
-body {font-family: Arial; margin:0; background:#eef5f9;}
-
-header, footer {
-    background:#0a3d62;
-    color:white;
-    text-align:center;
-    padding:15px;
-}
-
-nav {
-    background:#1e3799;
-    text-align:center;
-    padding:10px;
-}
-
-nav a {
-    color:white;
-    margin:10px;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-.courses {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:15px;
-    padding:20px;
-}
-
-.card {
-    background:white;
-    padding:15px;
-    border-radius:8px;
-    box-shadow:0 0 5px rgba(0,0,0,0.1);
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore our courses at MANUH Digital Institute - Programming, Web Development, Graphic Design and more.">
+    <meta name="keywords" content="Manuh, coding courses, online courses, programming Kenya">
+    <title>Courses | MANUH Digital Institute</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="logo.png">
 </head>
-
 <body>
-<!-- MENU BUTTON -->
-<div class="menu-btn" onclick="toggleMenu()">☰</div>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="loader"></div>
+            <div class="preloader-text">Loading<span>.</span><span>.</span><span>.</span></div>
+        </div>
+    </div>
 
-<!-- SIDE MENU -->
-<div id="sideMenu" class="side-menu"> 
-    <a href="#" onclick="toggleMenu()">❌Close</a>
-    <a href="index.html">Home</a>
-    <a href="courses.html">Courses</a>
-    <a href="updates.html">Updates</a>
-    <a href="testimonials.html">Testimonials</a>
-    <a href="contact.html">Contact</a>
-</div>
-<header>
-<h2>Our Courses</h2>
-</header>
+    <div class="progress-bar" id="progressBar"></div>
 
-<nav>
-<a href="index.html">Home</a>
-<a href="courses.html">Courses</a>
-<a href="updates.html">Updates</a>
-<a href="testimonials.html">Testimonials</a>
-<a href="contacts.html">Contact</a>
-</nav>
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
 
-<div class="courses">
-<div class="card">Computer Packages</div>
-<div class="card">Coding</div>
-<div class="card">Programming</div>
-<div class="card">Graphic Design</div>
-<div class="card">Web Development</div>
-<div class="card">Cryptocurrency Basics</div>
-<div class="card">Photo Editing</div>
-<div class="card">Video Editing</div>
-<div class="card">Mathematics</div>
-<div class="card">Physics</div>
-<div class="card">Chemistry</div>
-<div class="card">Computer Studies</div>
-<div class="card">Geography</div>
-<div class="card">Kiswahili</div>
-</div>
-<img src="online class view.png" width="1900" height="300" style="float: left; margin-right: 20px; width: 450px;"><br>
-<p>
-<b>At MANUAI DIGITAL INSTITUTE,</b> we offer a wide range of carefully designed courses aimed at equipping learners with
- 
-practical skills for both academic excellence and the modern digital world.<br>
+    <header class="header" id="header">
+        <div class="header-inner">
+            <div class="logo">
+                <img src="logo.png" alt="MANUH Digital Institute">
+                <div>
+                    <div class="logo-text">MANUH Digital Institute</div>
+                    <div class="logo-sub">Online Learning Platform</div>
+                </div>
+            </div>
+            <button class="nav-toggle" onclick="toggleNav()">☰</button>
+            <nav class="nav" id="mainNav">
+                <a href="index.html">Home</a>
+                <a href="courses.html" class="active">Courses</a>
+                <a href="updates.html">Updates</a>
+                <a href="testimonials.html">Testimonials</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
 
-<p>Our programs are suitable for beginners, students, and professionals who want to improve their knowledge, gain new skills,
+    <section class="about-hero">
+        <span class="badge">📚 Knowledge is Power</span>
+        <h1>Our Courses</h1>
+        <p>Carefully designed programs to equip you with practical skills for the digital future.</p>
+        <div style="margin-top: 30px;">
+            <a class="btn btn-accent" href="#courses">Browse Courses</a>
+        </div>
+    </section>
 
- and stay competitive in today’s fast-changing environment.</p><br>
+    <!-- Stats -->
+    <div class="stats-bar scroll-animate">
+        <div class="stat-item">
+            <span class="stat-number">20+</span>
+            <span class="stat-label">Courses</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">500+</span>
+            <span class="stat-label">Students</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">15+</span>
+            <span class="stat-label">Tutors</span>
+        </div>
+    </div>
 
-<p>Each course is delivered through interactive online sessions, practical assignments, and real-world projects to ensure you
+    <section class="section scroll-animate" id="courses">
+        <h2 class="section-title">All Courses</h2>
+        <p class="section-subtitle">Choose from our wide range of courses tailored for beginners, students, and professionals.</p>
 
- not only learn but also apply what you study</p>.<br>
+        <div class="courses-grid">
+            <div class="course-card animated-card hover-lift">
+                <div class="course-icon">💻</div>
+                <div class="course-content">
+                    <h3>Computer Packages</h3>
+                    <p>Master essential computer skills for the modern workplace.</p>
+                    <span class="badge">Beginner</span>
+                </div>
+            </div>
+            <div class="course-card animated-card hover-lift">
+                <div class="course-icon">⚙️</div>
+                <div class="course-content">
+                    <h3>Coding Fundamentals</h3>
+                    <p>Learn the basics of programming and computational thinking.</p>
+                    <span class="badge">Beginner</span>
+                </div>
+            </div>
+            <div class="course-card animated-card hover-lift">
+                <div class="course-icon">🖥️</div>
+                <div class="course-content">
+                    <h3>Web Development</h3>
+                    <p>Build modern websites with HTML, CSS, JavaScript, and more.</p>
+                    <span class="badge">Intermediate</span>
+                </div>
+            </div>
+            <div class="course-card animated-card hover-lift">
+                <div class="course-icon">🎨</div>
+                <div class="course-content">
+                    <h3>Graphic Design</h3>
+                    <p>Create stunning visuals and designs using professional tools.</p>
+                    <span class="badge">Beginner</span>
+                </div>
+            </div>
+            <div class="course-card animated-card hover-lift">
+                <div class="course-icon">📸</div>
+                <div class="course-content">
+                    <h3>Photo Editing</h3>
+                    <p>Transform your photos with advanced editing techniques.</p>
+                    <span class="badge">Beginner</span>
+                </div>
+            </div>
+            <div class="course-card animated-card hover-lift">
+                <div class="course-icon">🎬</div>
+                <div class="course-content">
+                    <h3>Video Editing</h3>
+                    <p>Create engaging video content for social media and YouTube.</p>
+                    <span class="badge">Intermediate</span>
+                </div>
+            </div>
+            <div class="course-card animated-card hover-lift">
+                <div class="course-icon">₿</div>
+                <div class="course-content">
+                    <h3>Cryptocurrency Basics</h3>
+                    <p>Understand blockchain technology and digital currencies.</p>
+                    <span class="badge">Beginner</span>
+                </div>
+            </div>
+            <div class="course-card animated-card hover-lift">
+                <div class="course-icon">🔢</div>
+                <div class="course-content">
+                    <h3>Mathematics</h3>
+                    <p>Strengthen your mathematical skills for academic success.</p>
+                    <span class="badge">All Levels</span>
+                </div>
+            </div>
+            <div class="course-card animated-card hover-lift">
+                <div class="course-icon">🔬</div>
+                <div class="course-content">
+                    <h3>Physics</h3>
+                    <p>Explore fundamental concepts of physics and their applications.</p>
+                    <span class="badge">All Levels</span>
+                </div>
+            </div>
+            <div class="course-card animated-card hover-lift">
+                <div class="course-icon">🧪</div>
+                <div class="course-content">
+                    <h3>Chemistry</h3>
+                    <p>Learn chemical principles and laboratory techniques.</p>
+                    <span class="badge">All Levels</span>
+                </div>
+            </div>
+            <div class="course-card animated-card hover-lift">
+                <div class="course-icon">💾</div>
+                <div class="course-content">
+                    <h3>Computer Studies</h3>
+                    <p>Comprehensive computer science fundamentals for students.</p>
+                    <span class="badge">All Levels</span>
+                </div>
+            </div>
+            <div class="course-card animated-card hover-lift">
+                <div class="course-icon">🌍</div>
+                <div class="course-content">
+                    <h3>Geography</h3>
+                    <p>Understand physical and human geography concepts.</p>
+                    <span class="badge">All Levels</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<p>Whether you are interested in technology, design, programming, or academic subjects, our courses are structured to help 
+    <section class="info-section scroll-animate">
+        <div class="info-content">
+            <h2>Why Learn With Us?</h2>
+            <p>At MANUH Digital Institute, we offer a wide range of carefully designed courses aimed at equipping learners with practical skills for both academic excellence and the modern digital world.</p>
+            <br>
+            <p>Our programs are suitable for beginners, students, and professionals who want to improve their knowledge, gain new skills, and stay competitive in today's fast-changing environment.</p>
+            <br>
+            <p>Each course is delivered through interactive online sessions, practical assignments, and real-world projects to ensure you not only learn but also apply what you study.</p>
+            <br>
+            <h3 style="color: var(--primary);">Learn today. Apply tomorrow. Succeed for life.</h3>
+        </div>
+    </section>
 
-you grow step by step and achieve your goals with confidence.<p/>
-</p><br>
+    <section class="cta-section scroll-animate">
+        <div class="cta-content">
+            <h2>Ready to Start Learning?</h2>
+            <p>Join our courses and transform your future today.</p>
+            <a class="btn-glow" href="https://forms.gle/YhykzPtUgLiprZreA">Register Now</a>
+        </div>
+    </section>
 
-<p><b><br><br><br>Learn today . Apply tomorrow . Succed for life.</b></p><br><br>
-<br><br>
-<footer>
-© 2026 MANUH DIGITAL INSTITUTE
-</footer>
+    <section class="section scroll-animate">
+        <h2 class="section-title">Course Benefits</h2>
+        <div class="features-grid">
+            <div class="feature-card animated-card">
+                <div class="animated-icon">🎯</div>
+                <h3>Hands-on Projects</h3>
+                <p>Work on real-world projects to build your portfolio.</p>
+            </div>
+            <div class="feature-card animated-card">
+                <div class="animated-icon">📜</div>
+                <h3>Certificates</h3>
+                <p>Earn recognized certificates upon completion.</p>
+            </div>
+            <div class="feature-card animated-card">
+                <div class="animated-icon">👨‍🏫</div>
+                <h3>Expert Tutors</h3>
+                <p>Learn from industry experienced professionals.</p>
+            </div>
+            <div class="feature-card animated-card">
+                <div class="animated-icon">♾️</div>
+                <h3>Lifetime Access</h3>
+                <p>Access course materials anytime, even after completion.</p>
+            </div>
+        </div>
+    </section>
 
-<script>
-function toggleMenu(){
-    let menu = document.getElementById("sideMenu");
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h3>MANUH Digital Institute</h3>
+                <p>Empowering students with digital skills for the modern world.</p>
+                <div class="social-icons">
+                    <a href="https://wa.me/254116089094" class="social-icon">💬</a>
+                    <a href="mailto:emmanuelkasivu224@gmail.com" class="social-icon">📧</a>
+                </div>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="courses.html">Courses</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+            <div>
+                <h3>Contact</h3>
+                <p>📞 0116089094</p>
+                <p>📧 emmanuelkasivu224@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MANUH Digital Institute. All rights reserved.</p>
+        </div>
+    </footer>
 
-    if(menu.style.width === "250px"){
-        menu.style.width = "0";
-    } else {
-        menu.style.width = "250px";
-    }
-}
-</script>
+    <script>
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('preloader').style.display = 'none';
+            }, 1500);
+        });
+
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+            
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        function toggleNav() {
+            document.getElementById('mainNav').classList.toggle('active');
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.scroll-animate').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>

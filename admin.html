@@ -1,187 +1,209 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="description" content="Manuh Digital Institute offers online courses in programming, web development, graphic design and more.">
-<meta name="keywords" content="Manuh, coding school, online courses, programming Kenya">
-<title>Admin Panel - MANUH</title>
-
-<style>
-/* MENU BUTTON */
-.menu-btn {
-    font-size: 25px;
-    cursor: pointer;
-    padding: 10px;
-    position: fixed;
-    top: 10px;
-    left: 15px;
-    color: white;
-    z-index: 1000;
-}
-
-/* SIDE MENU */
-.side-menu {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: #0a3d62;
-    overflow-x: hidden;
-    transition: 0.3s;
-    padding-top: 60px;
-}
-
-.side-menu a {
-    display: block;
-    padding: 15px;
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-.side-menu a:hover {
-    background: #38ada9;
-}
-body {
-    font-family: Arial;
-    background: #eef5f9;
-    margin: 0;
-    text-align: center;
-}
-
-header {
-    background: #0a3d62;
-    color: white;
-    padding: 15px;
-}
-
-.container {
-    padding: 30px;
-}
-
-input {
-    padding: 10px;
-    margin: 5px;
-    width: 200px;
-}
-
-button {
-    padding: 10px 15px;
-    background: #38ada9;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-table {
-    margin: auto;
-    margin-top: 20px;
-    border-collapse: collapse;
-    width: 80%;
-}
-
-table, th, td {
-    border: 1px solid #ccc;
-    padding: 10px;
-}
-
-th {
-    background: #0a3d62;
-    color: white;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MANUH Digital Institute Admin Panel">
+    <title>Admin Panel | MANUH Digital Institute</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .admin-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        .admin-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+        .admin-card h3 {
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: var(--secondary);
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        table, th, td {
+            border: 1px solid #e2e8f0;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background: var(--primary);
+            color: var(--white);
+        }
+    </style>
 </head>
-
 <body>
-<!-- MENU BUTTON -->
-<div class="menu-btn" onclick="toggleMenu()">☰</div>
+    <header class="header">
+        <div class="header-inner">
+            <div class="logo">
+                <img src="logo.png" alt="MANUH Digital Institute">
+                <div>
+                    <div class="logo-text">MANUH Digital Institute</div>
+                    <div class="logo-sub">Admin Panel</div>
+                </div>
+            </div>
+            <button class="nav-toggle" onclick="toggleNav()">☰</button>
+            <nav class="nav" id="mainNav">
+                <a href="index.html">Home</a>
+                <a href="courses.html">Courses</a>
+                <a href="updates.html">Updates</a>
+                <a href="testimonials.html">Testimonials</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
 
-<!-- SIDE MENU -->
-<div id="sideMenu" class="side-menu">
-    <a href="#" onclick="toggleMenu()">❌Close</a>
-    <a href="index.html">Home</a>
-    <a href="courses.html">Courses</a>
-    <a href="updates.html">Updates</a>
-    <a href="testimonials.html">Testimonials</a>
-    <a href="contact.html">Contact</a>
-</div>
-<header>
-<h2>Admin Panel</h2>
-<p>Manage Students</p>
-</header>
+    <section class="section">
+        <h2 class="section-title">Admin Panel</h2>
+        
+        <div class="admin-container">
+            <div class="admin-card">
+                <h3>Add Student</h3>
+                <form onsubmit="addStudent(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Course</label>
+                            <input type="text" id="course" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Payment Status</label>
+                            <input type="text" id="status" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="text" id="phone">
+                        </div>
+                        <div class="form-group">
+                            <label>Level</label>
+                            <input type="text" id="level">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn" style="margin-top: 15px;">Add Student</button>
+                </form>
+            </div>
 
-<div class="container">
+            <div class="admin-card">
+                <h3>Student Records</h3>
+                <table id="studentTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Course</th>
+                            <th>Status</th>
+                            <th>Phone</th>
+                            <th>Level</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <tr>
+                            <td colspan="5" style="text-align: center; color: var(--gray);">Loading student data...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
 
-<h3>Add Student</h3>
+    <footer class="footer">
+        <p>&copy; 2026 MANUH Digital Institute. All rights reserved.</p>
+    </footer>
 
-<input type="text" id="name" placeholder="Name">
-<input type="text" id="course" placeholder="Course">
-<input type="text" id="status" placeholder="Payment Status">
-<input type="text" id="status" placeholder="Phone number">
-<input type="text" id="status" placeholder="your level">
-<br><br>
-<button onclick="addStudent()">Add</button>
+    <script>
+        function toggleNav() {
+            document.getElementById('mainNav').classList.toggle('active');
+        }
 
-<h3>Student Records</h3>
+        const password = prompt("Enter Admin Password:");
+        
+        if(password !== "admin123") {
+            alert("Access Denied");
+            window.location.href = "index.html";
+        }
 
-<table id="table">
-<tr>
-<th>Name</th>
-<th>Course</th>
-<th>Status</th>
-<th>phone number</th>
-<th>your level</th>
-</tr>
-</table>
+        const scriptURL = "https://script.google.com/macros/s/AKfycbxEfdtH7J-JGkwNBiwS1fUm7ss4GnFh3Oe9VlVW-GydqVm9uI6_HTYOutLqC6gaaTQbQA/exec";
+        const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQhWSecaoPo58RDYDO5vGVjQj4ZnOai4Zv1HASyNy6rtLW99l5zXTQamYXKHBvB--AUJJ_jW89Kjvk1/pub?gid=578775294&single=true&output=csv";
 
-</div>
+        function addStudent(e) {
+            e.preventDefault();
+            const name = document.getElementById("name").value;
+            const course = document.getElementById("course").value;
+            const status = document.getElementById("status").value;
+            const phone = document.getElementById("phone").value;
+            const level = document.getElementById("level").value;
 
-<script>
+            fetch(scriptURL, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({name, course, status, phone, level})
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert("Student added successfully!");
+                document.querySelector("form").reset();
+                loadStudents();
+            })
+            .catch(error => {
+                alert("Error: " + error);
+            });
+        }
 
-const password = "admin123";
+        function loadStudents() {
+            fetch(sheetURL)
+                .then(res => res.text())
+                .then(data => {
+                    const rows = data.split("\n").slice(1);
+                    let html = "";
+                    rows.forEach(row => {
+                        const cols = row.split(",");
+                        if(cols.length >= 3 && cols[0]) {
+                            html += `<tr>
+                                <td>${cols[0]}</td>
+                                <td>${cols[1] || '-'}</td>
+                                <td>${cols[2] || '-'}</td>
+                                <td>${cols[3] || '-'}</td>
+                                <td>${cols[4] || '-'}</td>
+                            </tr>`;
+                        }
+                    });
+                    document.getElementById("tableBody").innerHTML = html || '<tr><td colspan="5" style="text-align: center; color: var(--gray);">No students found</td></tr>';
+                });
+        }
 
-let user = prompt("Enter Admin Password:");
-
-if(user !== password){
-    alert("Access Denied");
-    window.location.href = "index.html";
-}
-
-const scriptURL = "https://script.google.com/macros/s/AKfycbxEfdtH7J-JGkwNBiwS1fUm7ss4GnFh3Oe9VlVW-GydqVm9uI6_HTYOutLqC6gaaTQbQA/exec";
-
-function addStudent(){
-    const name = document.getElementById("name").value;
-    const course = document.getElementById("course").value;
-    const status = document.getElementById("status").value;
-
-    fetch(scriptURL, {
-        method: "POST",
-        header: {
-               "content-Type": "application/json"
-        },
-        body: JSON.stringify({name, course, status, phone number, your level})
-    })
-    .then(response => response.text())
-    .then(data => {
-        alert("✅student added successfully");
-    })
-    .catch(error => {
-        alert("❌Error: " + error);
-        console.error(error);
-    });
-}
-</script>
-
-<script>
-function toggleMenu(){
-    let menu = document.getElementById("sideMenu");
-
-    if(menu.style.width === "250px"){
-        menu.style.width = "0";
-    } else {
-        menu.style.width = "250px";
-    }
-}
-</script>
+        loadStudents();
+    </script>
 </body>
 </html>
