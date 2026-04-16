@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Register for MANUH Digital Institute courses">
+    <title>Student Registration | MANUH Digital Institute</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .register-container {
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 30px;
+        }
+        .register-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+        .register-card h2 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+        .register-card p {
+            text-align: center;
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--secondary);
+        }
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        .btn-block {
+            width: 100%;
+            padding: 16px;
+            font-size: 1.1rem;
+        }
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            background: #d4edda;
+            color: #155724;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <div class="logo">
+                <img src="logo.png" alt="MANUH Digital Institute">
+                <div>
+                    <div class="logo-text">MANUH Digital Institute</div>
+                    <div class="logo-sub">Student Registration</div>
+                </div>
+            </div>
+            <button class="nav-toggle" onclick="toggleNav()">☰</button>
+            <nav class="nav" id="mainNav">
+                <a href="index.html">Home</a>
+                <a href="courses.html">Courses</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="register-container">
+            <div class="register-card">
+                <h2>Register Now</h2>
+                <p>Join MANUH Digital Institute and start your digital journey</p>
+                
+                <form id="registerForm" onsubmit="submitRegistration(event)">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" required placeholder="Enter your full name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" required placeholder="Enter your email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" required placeholder="Enter your phone number">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="course">Select Course *</label>
+                        <select id="course" required>
+                            <option value="">Choose a course</option>
+                            <option value="Web Development">Web Development</option>
+                            <option value="Graphic Design">Graphic Design</option>
+                            <option value="Video Editing">Video Editing</option>
+                            <option value="Programming">Programming</option>
+                            <option value="Computer Basics">Computer Basics</option>
+                            <option value="UI/UX Design">UI/UX Design</option>
+                            <option value="Cybersecurity">Cybersecurity</option>
+                            <option value="Data Science">Data Science</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="level">Experience Level</label>
+                        <select id="level">
+                            <option value="Beginner">Beginner</option>
+                            <option value="Intermediate">Intermediate</option>
+                            <option value="Advanced">Advanced</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-block">Submit Registration</button>
+                </form>
+                
+                <div id="successMessage" class="success-message">
+                    <h3>Registration Successful!</h3>
+                    <p>Thank you for registering. We will contact you soon.</p>
+                    <a href="index.html" class="btn" style="margin-top: 15px; display: inline-block;">Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 MANUH Digital Institute. <a href="https://catech.co.ke" target="_blank" style="color: #ff9900;">All rights reserved - Catech Solutions and Graphics</a></p>
+    </footer>
+
+    <script>
+        function toggleNav() {
+            document.getElementById('mainNav').classList.toggle('active');
+        }
+
+        const scriptURL = "https://script.google.com/macros/s/AKfycbxEfdtH7J-JGkwNBiwS1fUm7ss4GnFh3Oe9VlVW-GydqVm9uI6_HTYOutLqC6gaaTQbQA/exec";
+
+        function submitRegistration(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById("name").value;
+            const course = document.getElementById("course").value;
+            const status = "Pending"; // Default status for new registrations
+            const phone = document.getElementById("phone").value;
+            const level = document.getElementById("level").value || "Beginner";
+            const email = document.getElementById("email").value;
+            
+            // Store email in phone field temporarily or add to level
+            const data = {
+                name: name,
+                course: course,
+                status: status,
+                phone: phone + " | Email: " + email,
+                level: level
+            };
+            
+            fetch(scriptURL, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("registerForm").style.display = "none";
+                document.getElementById("successMessage").style.display = "block";
+            })
+            .catch(error => {
+                alert("Error: " + error.message);
+            });
+        }
+    </script>
+</body>
+</html>
